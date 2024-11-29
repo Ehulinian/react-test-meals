@@ -12,6 +12,7 @@ import { MealsContext } from "../../store/MealsContext";
 export const MealsList = () => {
   const { page, setPage } = useContext(MealsContext);
   const [searchTerm, setSearchTerm] = useState("");
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState(searchTerm);
   const { data, error, isLoading } = useMeals();
   const [categoryFilter, setCategoryFilter] = useState<Category>(Category.All);
 
@@ -19,9 +20,19 @@ export const MealsList = () => {
 
   const meals = data?.meals || [];
 
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedSearchTerm(searchTerm);
+    }, 300);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [searchTerm]);
+
   const filteredMeals = meals
     .filter((meal) =>
-      meal.strMeal.toLowerCase().includes(searchTerm.toLowerCase())
+      meal.strMeal.toLowerCase().includes(debouncedSearchTerm.toLowerCase())
     )
     .filter((meal) => {
       if (categoryFilter === Category.All) {
