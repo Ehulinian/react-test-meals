@@ -6,9 +6,13 @@ import styles from "./FavoriteButton.module.scss";
 
 type FavoriteButtonProps = {
   meal: Meal;
+  onRemoveStart?: (id: string) => void;
 };
 
-export const FavoriteButton: React.FC<FavoriteButtonProps> = ({ meal }) => {
+export const FavoriteButton: React.FC<FavoriteButtonProps> = ({
+  meal,
+  onRemoveStart,
+}) => {
   const { addToFavorites, removeFromFavorites, favorites } =
     useContext(MealsContext);
 
@@ -21,7 +25,10 @@ export const FavoriteButton: React.FC<FavoriteButtonProps> = ({ meal }) => {
     e.stopPropagation();
 
     if (isFavorite) {
-      removeFromFavorites(meal.idMeal);
+      onRemoveStart?.(meal.idMeal);
+      setTimeout(() => {
+        removeFromFavorites(meal.idMeal);
+      }, 300);
     } else {
       addToFavorites(meal);
     }
