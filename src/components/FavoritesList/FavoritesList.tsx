@@ -7,7 +7,7 @@ import { Instructions } from "../Instructions";
 import { combineIngredients } from "../../helper/combine";
 
 export const FavoritesList = () => {
-  const { favorites, removeFromFavorites } = useContext(MealsContext);
+  const { favorites } = useContext(MealsContext);
 
   const ingredientsList = combineIngredients(favorites);
 
@@ -21,11 +21,7 @@ export const FavoritesList = () => {
 
       <div className={styles.favoritesList__favorites}>
         {favorites.map((meal: Meal) => (
-          <FavoriteCard
-            key={meal.idMeal}
-            meal={meal}
-            onRemove={removeFromFavorites}
-          />
+          <FavoriteCard key={meal.idMeal} meal={meal} />
         ))}
       </div>
 

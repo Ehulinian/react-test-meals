@@ -1,0 +1,32 @@
+.favoriteButton {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  width: 90%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    background-color: #e55347;
+  }
+
+  &:disabled {
+    background-color: #e55347;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):hover {
+    background-color: #e55347;
+  }
+}
+
+.isFavorite {
+  background-color: gray;
+}

@@ -1,34 +1,13 @@
 import { Link } from "react-router-dom";
 import { Meal } from "../../types/Meal";
 import styles from "./MealCard.module.scss";
-import { useContext, MouseEvent } from "react";
-import { MealsContext } from "../../store/MealsContext";
-import classNames from "classnames";
+import { FavoriteButton } from "../../UI/Button";
 
 type MealCardProps = {
   meal: Meal;
 };
 
 export const MealCard: React.FC<MealCardProps> = ({ meal }) => {
-  const { addToFavorites, removeFromFavorites, favorites } =
-    useContext(MealsContext);
-
-  const handleAddToFavorites = (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    e.stopPropagation();
-    addToFavorites(meal);
-  };
-
-  const handleRemoveFromFavorites = (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    e.stopPropagation();
-    removeFromFavorites(meal.idMeal);
-  };
-
-  const isFavorite = favorites.some(
-    (favorite) => favorite.idMeal === meal.idMeal
-  );
-
   return (
     <Link to={`/recipe/${meal.idMeal}`} className={styles.mealCard}>
       <img
@@ -42,14 +21,7 @@ export const MealCard: React.FC<MealCardProps> = ({ meal }) => {
         <p className={styles.mealOrigin}>Origin: {meal.strArea}</p>
       </div>
 
-      <button
-        className={classNames(styles.favoriteButton, {
-          [styles.isFavorite]: isFavorite,
-        })}
-        onClick={isFavorite ? handleRemoveFromFavorites : handleAddToFavorites}
-      >
-        {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
-      </button>
+      <FavoriteButton meal={meal} />
     </Link>
   );
 };
