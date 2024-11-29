@@ -4,7 +4,7 @@ import { FavoriteCard } from "../FavoriteCard/FavoriteCard";
 import styles from "./FavoritesList.module.scss";
 import { Meal } from "../../types/Meal";
 import { Instructions } from "../Instructions";
-import { combineIngredients } from "../helper/combine";
+import { combineIngredients } from "../../helper/combine";
 
 export const FavoritesList = () => {
   const { favorites, removeFromFavorites } = useContext(MealsContext);

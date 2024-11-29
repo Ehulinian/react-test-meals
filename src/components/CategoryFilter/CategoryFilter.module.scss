@@ -6,12 +6,23 @@
 }
 
 .categorySelect {
-  margin-top: 10px;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  background-color: #2b2b2b;
+  color: #fff;
+  border: 1px solid #444;
   width: 200px;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    border-color: #666;
+  }
+
+  &:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+  }
 }
 
 .selectName {

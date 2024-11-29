@@ -6,19 +6,33 @@
 
 .searchInput {
   width: 300px;
-  padding: 10px;
+  padding: 10px 12px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
   outline: none;
-  transition: border-color 0.3s ease;
+  background-color: #fff;
+  color: #333;
+  transition: all 0.3s ease;
 
   &::placeholder {
-    color: #888;
+    color: #aaa;
+    font-style: italic;
+  }
+
+  &:hover {
+    border-color: #888;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   &:focus {
     border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    background-color: #f7f9fc;
+  }
+
+  &:active {
+    background-color: #eef3f8;
   }
 }
 

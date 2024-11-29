@@ -4,7 +4,7 @@ import { Loader } from "../Loader";
 import { MealCard } from "../MealCard";
 import styles from "./MealsList.module.scss";
 import { Pagination } from "../Pagination";
-import { Search } from "../SearchComponent";
+import { Search } from "../Search";
 import { CategoryFilter } from "../CategoryFilter";
 import { Category } from "../../types/Filter";
 import { MealsContext } from "../../store/MealsContext";

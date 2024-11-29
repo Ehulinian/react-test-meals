@@ -1,4 +1,4 @@
-import { Meal } from "../../types/Meal";
+import { Meal } from "../types/Meal";
 
 export const combineIngredients = (favorites: Meal[]) => {
   const allIngredients: string[] = [];
