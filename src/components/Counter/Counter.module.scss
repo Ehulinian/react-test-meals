@@ -1,0 +1,31 @@
+@import "../../styles/mixins";
+
+.favoriteCount {
+  display: inline-block;
+  grid-column: span 1;
+
+  .badge {
+    position: relative;
+    background-color: #eb5757;
+    color: $main-white-color;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid #0f1121;
+    z-index: 10000;
+
+    @include on-phone {
+      display: none;
+    }
+
+    @include on-desktop {
+      top: 6px;
+      left: -35px;
+    }
+  }
+}
