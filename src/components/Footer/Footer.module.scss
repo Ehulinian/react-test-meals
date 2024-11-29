@@ -8,27 +8,27 @@
   border-top: 1px solid $border-header-color;
 }
 
-.footer__content {
+.footerContent {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.footer__text {
+.footerText {
   margin: 0;
   font-size: 14px;
 }
 
-.footer__links {
+.footerLinks {
   margin-top: 10px;
 }
 
-.footer__link {
+.footerLink {
   color: #fff;
   margin: 0 10px;
   text-decoration: none;
   transition: color 0.3s;
 }
 
-.footer__link:hover {
+.footerLink:hover {
   color: #f1f1f1;
 }

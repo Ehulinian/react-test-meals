@@ -5,7 +5,7 @@
   flex-direction: column;
   background-color: unset;
 
-  &__header {
+  .favoritesListHeader {
     font-size: 2.5rem;
     font-weight: bold;
     color: $main-white-color;
@@ -14,14 +14,14 @@
     margin-top: 24px;
   }
 
-  &__favorites {
+  .favoritesListFavorites {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     margin-bottom: 20px;
   }
 
-  &__summary {
+  .favoritesListSummary {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -29,14 +29,19 @@
     margin-top: 20px;
     margin-bottom: 24px;
 
-    &__title {
+    h2 {
+      color: black;
+      padding-block: 10px;
+    }
+
+    .favoritesListTitle {
       font-size: 1.8rem;
       font-weight: bold;
       color: #333;
       margin-bottom: 15px;
     }
 
-    &__text {
+    .favoritesListText {
       font-size: 1.2rem;
       color: #555;
       line-height: 1.6;

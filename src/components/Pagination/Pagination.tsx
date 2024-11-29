@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import styles from "./Pagination.module.scss";
 
 interface PaginationProps {
@@ -56,7 +57,9 @@ export const Pagination: React.FC<PaginationProps> = ({
       <button
         onClick={handlePrevPage}
         disabled={currentPage === 1}
-        className={styles.pageButton}
+        className={classNames(styles.pageButton, {
+          [styles.disabled]: currentPage === 1,
+        })}
       >
         Prev
       </button>
@@ -68,9 +71,9 @@ export const Pagination: React.FC<PaginationProps> = ({
           ) : (
             <button
               onClick={() => onPageChange(page as number)}
-              className={`${styles.pageButton} ${
-                currentPage === page ? styles.active : ""
-              }`}
+              className={classNames(styles.pageButton, {
+                [styles.active]: currentPage === page,
+              })}
             >
               {page}
             </button>
@@ -81,7 +84,9 @@ export const Pagination: React.FC<PaginationProps> = ({
       <button
         onClick={handleNextPage}
         disabled={currentPage === totalPages}
-        className={styles.pageButton}
+        className={classNames(styles.pageButton, {
+          [styles.disabled]: currentPage === totalPages,
+        })}
       >
         Next
       </button>

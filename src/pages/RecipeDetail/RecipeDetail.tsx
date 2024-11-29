@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useMeal } from "../../hooks/useMeals";
 import styles from "./RecipeDetail.module.scss";
 import { IngredientsList } from "../../components/IngridientList";
@@ -47,9 +47,13 @@ export const RecipeDetail = () => {
         <p>
           <strong>Video:</strong>{" "}
           {meal?.strYoutube ? (
-            <a href={meal.strYoutube} target="_blank" rel="noopener noreferrer">
+            <Link
+              to={meal.strYoutube}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Watch on YouTube
-            </a>
+            </Link>
           ) : (
             "No video available"
           )}

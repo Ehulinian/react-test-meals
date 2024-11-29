@@ -1,22 +1,23 @@
+import { Link } from "react-router-dom";
 import styles from "./Footer.module.scss";
 
 export const Footer = () => {
   return (
     <div className={styles.footer}>
-      <div className={styles.footer__content}>
-        <p className={styles.footer__text}>
+      <div className={styles.footerСontent}>
+        <p className={styles.footerText}>
           &copy; {new Date().getFullYear()} Your Company. All rights reserved.
         </p>
-        <div className={styles.footer__links}>
-          <a href="/privacy-policy" className={styles.footer__link}>
+        <div className={styles.footerLinks}>
+          <Link to="/privacy-policy" className={styles.footerLink}>
             Privacy Policy
-          </a>
-          <a href="/terms" className={styles.footer__link}>
+          </Link>
+          <Link to="/terms" className={styles.footerLink}>
             Terms of Service
-          </a>
-          <a href="/contact" className={styles.footer__link}>
+          </Link>
+          <Link to="/contact" className={styles.footerLink}>
             Contact Us
-          </a>
+          </Link>
         </div>
       </div>
     </div>

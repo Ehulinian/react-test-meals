@@ -17,27 +17,25 @@ export const FavoritesList = () => {
 
   return (
     <div className={styles.favoritesList}>
-      <h1 className={styles.favoritesList__header}>Favorite recipes</h1>
+      <h1 className={styles.favoritesListHeader}>Favorite recipes</h1>
 
-      <div className={styles.favoritesList__favorites}>
+      <div className={styles.favoritesListFavorites}>
         {favorites.map((meal: Meal) => (
           <FavoriteCard key={meal.idMeal} meal={meal} />
         ))}
       </div>
 
       {favorites.length > 0 && (
-        <div className={styles.favoritesList__summary}>
-          <h2 className={styles.favoritesList__summary__title}>
-            Ingredients List
-          </h2>
-          <ul className={styles.favoritesList__summary__ingredients}>
+        <div className={styles.favoritesListSummary}>
+          <h2 className={styles.favoritesListSummaryTitle}>Ingredients List</h2>
+          <ul className={styles.favoritesListSummaryIngredients}>
             {ingredientsList.map((ingredient, index) => (
               <li key={index}>{ingredient}</li>
             ))}
           </ul>
 
-          <h2 className={styles.favoritesList__summary__title}>Instructions</h2>
-          <div className={styles.favoritesList__summary__instructions}>
+          <h2 className={styles.favoritesListSummaryTitle}>Instructions</h2>
+          <div className={styles.favoritesListSummaryInstructions}>
             <Instructions meals={favorites} />
           </div>
         </div>
