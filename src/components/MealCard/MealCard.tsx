@@ -3,6 +3,7 @@ import { Meal } from "../../types/Meal";
 import styles from "./MealCard.module.scss";
 import { useContext } from "react";
 import { MealsContext } from "../../store/MealsContext";
+import classNames from "classnames";
 
 type MealCardProps = {
   meal: Meal;
@@ -40,7 +41,9 @@ export const MealCard: React.FC<MealCardProps> = ({ meal }) => {
       </Link>
 
       <button
-        className={styles.favoriteButton}
+        className={classNames(styles.favoriteButton, {
+          [styles.isFavorite]: isFavorite,
+        })}
         onClick={isFavorite ? handleRemoveFromFavorites : handleAddToFavorites}
       >
         {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
