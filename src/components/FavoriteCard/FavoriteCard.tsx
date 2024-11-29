@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { Meal } from "../../types/Meal";
 import styles from "./FavoriteCard.module.scss";
-import { FavoriteButton } from "../../UI/Button";
 import { useState } from "react";
 import classNames from "classnames";
+import { FavoriteButton } from "../UI/Button";
 
 type FavoriteCardProps = {
   meal: Meal;

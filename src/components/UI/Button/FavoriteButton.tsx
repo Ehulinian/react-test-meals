@@ -1,8 +1,8 @@
 import { useContext, MouseEvent } from "react";
-import { Meal } from "../../types/Meal";
-import { MealsContext } from "../../store/MealsContext";
 import classNames from "classnames";
 import styles from "./FavoriteButton.module.scss";
+import { MealsContext } from "../../../store/MealsContext";
+import { Meal } from "../../../types/Meal";
 
 type FavoriteButtonProps = {
   meal: Meal;

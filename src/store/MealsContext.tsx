@@ -8,8 +8,9 @@ export type State = {
 
 type MealsContextType = State & {
   setPage: (payload: number) => void;
-  addToFavorites: (meal: Meal) => void;
-  removeFromFavorites: (mealId: string) => void;
+  addToFavorites: (payload: Meal) => void;
+  removeFromFavorites: (payload: string) => void;
+  setFavorites: (payload: Meal[]) => void;
 };
 
 export const MealsContext = createContext<MealsContextType>({
@@ -18,4 +19,5 @@ export const MealsContext = createContext<MealsContextType>({
   setPage: () => {},
   addToFavorites: () => {},
   removeFromFavorites: () => {},
+  setFavorites: () => {},
 });

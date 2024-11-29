@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Meal } from "../../types/Meal";
 import styles from "./MealCard.module.scss";
-import { FavoriteButton } from "../../UI/Button";
+import { FavoriteButton } from "../UI/Button";
 
 type MealCardProps = {
   meal: Meal;

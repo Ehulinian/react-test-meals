@@ -30,3 +30,11 @@
 .isFavorite {
   background-color: gray;
 }
+
+@media screen and (max-width: 640px) {
+  .favoriteButton {
+    &:hover {
+      transform: unset;
+    }
+  }
+}
