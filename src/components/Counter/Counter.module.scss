@@ -23,6 +23,11 @@
       display: none;
     }
 
+    @include on-tablet {
+      top: 6px;
+      left: -35px;
+    }
+
     @include on-desktop {
       top: 6px;
       left: -35px;
