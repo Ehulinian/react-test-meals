@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { MealsContext } from "../../store/MealsContext";
-import { FavoriteCard } from "../FavoriteCard/FavoriteCard";
+import { FavoriteCard } from "../FavoriteCard";
 import styles from "./FavoritesList.module.scss";
 import { Meal } from "../../types/Meal";
 import { Instructions } from "../Instructions";

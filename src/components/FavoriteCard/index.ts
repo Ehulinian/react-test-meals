@@ -1,1 +1,1 @@
-export * from "./Favorite.module.scss";
+export * from "./FavoriteCard";
